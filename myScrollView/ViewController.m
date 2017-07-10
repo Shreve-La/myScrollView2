@@ -9,6 +9,11 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (nonatomic, strong) UIView *mainView;
+@property (nonatomic, strong) UIView *redView;
+@property (nonatomic, strong) UIView *greenView;
+@property (nonatomic, strong) UIView *yellowView;
+@property (nonatomic, strong) UIView *blueView;
 
 @end
 
@@ -16,14 +21,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.mainView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    self.redView = [[UIView alloc]initWithFrame:CGRectMake(20, 20, 100, 100)];
+    self.redView.backgroundColor = [UIColor redColor];
+    
+    self.greenView = [[UIView alloc]initWithFrame:CGRectMake(150, 150, 150, 200)];
+    self.greenView.backgroundColor = [UIColor greenColor];
+    
+    self.blueView = [[UIView alloc]initWithFrame:CGRectMake(40, 400, 200, 150)];
+    self.blueView.backgroundColor = [UIColor blueColor];
+    
+    self.yellowView = [[UIView alloc]initWithFrame:CGRectMake(100, 600, 180, 150)];
+    self.yellowView.backgroundColor = [UIColor yellowColor];
+    
+    [self.view addSubview:self.mainView];
+    [self.mainView addSubview:self.redView];
+    [self.mainView addSubview:self.greenView];
+    [self.mainView addSubview:self.yellowView];
+    [self.mainView addSubview:self.blueView];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 
 @end

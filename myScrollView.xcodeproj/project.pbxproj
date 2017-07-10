@@ -10,7 +10,7 @@
 		EDB92BD91F13D26D00F94989 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB92BD81F13D26D00F94989 /* main.m */; };
 		EDB92BDC1F13D26D00F94989 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB92BDB1F13D26D00F94989 /* AppDelegate.m */; };
 		EDB92BDF1F13D26D00F94989 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB92BDE1F13D26D00F94989 /* ViewController.m */; };
-		EDB92BE21F13D26D00F94989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB92BE01F13D26D00F94989 /* Main.storyboard */; };
+		EDB92BE21F13D26D00F94989 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB92BE01F13D26D00F94989 /* Main.storyboard */; settings = {ASSET_TAGS = (101, ); }; };
 		EDB92BE41F13D26D00F94989 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB92BE31F13D26D00F94989 /* Assets.xcassets */; };
 		EDB92BE71F13D26D00F94989 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB92BE51F13D26D00F94989 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -105,6 +105,9 @@
 		EDB92BCC1F13D26D00F94989 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					101,
+				);
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Shreve.ca;
 				TargetAttributes = {
