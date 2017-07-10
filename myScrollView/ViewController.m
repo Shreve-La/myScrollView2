@@ -41,6 +41,12 @@
     [self.mainView addSubview:self.blueView];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    CGRect r = [self.mainView bounds];
+    r.origin.y = -100;
+    [self.mainView setFrame:r];
+    
+}
 
 
 @end
