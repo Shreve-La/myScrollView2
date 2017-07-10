@@ -15,6 +15,9 @@
 @property (nonatomic, strong) UIView *yellowView;
 @property (nonatomic, strong) UIView *blueView;
 
+@property (nonatomic) CGSize contentSize;
+
+
 @end
 
 @implementation ViewController
@@ -39,14 +42,26 @@
     [self.mainView addSubview:self.greenView];
     [self.mainView addSubview:self.yellowView];
     [self.mainView addSubview:self.blueView];
+    
+    UIPanGestureRecognizer *panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panHandler:)];
+    [self.mainView addGestureRecognizer:panGestureRecognizer];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    CGRect r = [self.mainView bounds];
-    r.origin.y = -100;
-    [self.mainView setFrame:r];
+
+- (void)panHandler:(UIPanGestureRecognizer*)sender{
+    CGPoint translation = [sender translationInView:self.mainView];
+    CGRect bounds = self.mainView.bounds;
+    CGFloat newBoundsOriginY = bounds.origin.y - translation.y;
+    bounds.origin.y = newBoundsOriginY;
+//    CGFloat minBoundsOriginY = 0.0;
+//    CGFloat maxBoundsOriginY = self.contentSize.height - bounds.size.height;
+//    bounds.origin.y = fmax(minBoundsOriginY, fmin(newBoundsOriginY, maxBoundsOriginY));
+    self.mainView.bounds = bounds;
+    [sender setTranslation:CGPointZero inView:self.mainView];
+    NSLog(@"Pan being handled, %f", self.view.bounds.origin.y);
     
 }
+
 
 
 @end
